@@ -1,4 +1,4 @@
-# ChatGPT/Codex 浏览器功能启动的 `codex.exe`：用途观察与安全退出建议
+# ChatGPT/Codex 浏览器功能启动的 `code.exe`：用途观察与安全退出建议
 
 > 记录日期：2026-07-10  
 > 环境：Windows，Codex 的 Chrome 浏览器功能/侧边栏
@@ -8,13 +8,13 @@
 在新版 Codex 浏览器使用功能中，第一次从浏览器侧边栏启动相关能力后，Windows 后台可能出现以下进程：
 
 ```text
-C:\Users\HP\.codex\plugins\.plugin-appserver\codex.exe
+C:\Users\HP\.codex\plugins\.plugin-appserver\code.exe
 ```
 
 需要先澄清两点：
 
 1. OpenAI 当前官方资料仍将该编码代理称为 **Codex**；它可以使用 ChatGPT 账号和 ChatGPT 套餐登录，但不能据此简单表述为“Codex 已改名为 ChatGPT”。
-2. 这个 `codex.exe` 不是一个独立的用户插件。根据文件所在目录和程序自身帮助信息，它更像是浏览器侧边栏背后使用的 **Codex CLI / 插件应用服务器运行组件**。
+2. 这个 `code.exe` 不是一个独立的用户插件。根据文件所在目录和程序自身帮助信息，它更像是浏览器侧边栏背后使用的 **Codex CLI / 插件应用服务器运行组件**。
 
 官方参考：
 
@@ -27,7 +27,7 @@ C:\Users\HP\.codex\plugins\.plugin-appserver\codex.exe
 
 | 项目 | 观察值 |
 |---|---|
-| 文件路径 | `C:\Users\HP\.codex\plugins\.plugin-appserver\codex.exe` |
+| 文件路径 | `C:\Users\HP\.codex\plugins\.plugin-appserver\code.exe` |
 | CLI 版本 | `codex-cli 0.144.0-alpha.4` |
 | 文件大小 | 341,269,296 字节 |
 | SHA-256 | `B88F944EF63556527CAAE2AD43F80B88B8BE174DC09B09D9B037FC94240A0E91` |
@@ -75,8 +75,8 @@ C:\Users\HP\.codex\plugins\.plugin-appserver\codex.exe
 
 ## 安全建议
 
-- 不要因为看到后台进程就直接删除 `codex.exe`。
-- 不要删除整个 `C:\Users\HP\.codex`，其中可能包含配置、技能、插件和会话数据。
+- 不要因为看到后台进程就直接删除 `code.exe`。
+- 不要删除整个 `C:\Users\HP\.code`，其中可能包含配置、技能、插件和会话数据。
 - 如果文件缺失或运行组件损坏，应先退出程序，备份并改名 `.plugin-appserver` 目录，再重启以触发自动重建。
 - 若怀疑文件异常，应核对路径、数字签名、哈希和安全软件隔离记录，不要从第三方网站下载同名程序替换。
   
@@ -86,4 +86,4 @@ C:\Users\HP\.codex\plugins\.plugin-appserver\codex.exe
 
 ## 结论
 
-`C:\Users\HP\.codex\plugins\.plugin-appserver\codex.exe` 是 Codex 插件应用服务器目录中的 CLI/运行时组件，而不是一个普通插件。它在浏览器功能启用后进入后台运行并不必然代表异常。只有在所有任务与界面均已正常关闭、进程仍异常驻留或持续占用资源时，才建议将“在任务管理器中结束进程”作为故障排查手段，而不是日常必做步骤。但是在非代理环境如何运行，目前未知。
+`C:\Users\HP\.codex\plugins\.plugin-appserver\code.exe` 是 Codex 插件应用服务器目录中的 CLI/运行时组件，而不是一个普通插件。它在浏览器功能启用后进入后台运行并不必然代表异常。只有在所有任务与界面均已正常关闭、进程仍异常驻留或持续占用资源时，才建议将“在任务管理器中结束进程”作为故障排查手段，而不是日常必做步骤。但是在非代理环境如何运行，目前未知。
